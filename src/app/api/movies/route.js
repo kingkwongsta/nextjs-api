@@ -1,4 +1,5 @@
-// import { getMovies } from "./../../lib/mongo/movies";
+import { getMovies } from "../../../../lib/mongo/movies";
+import { NextResponse } from "next/server";
 
 // const handler = async (req, res) => {
 //   if (req.method === "GET") {
@@ -15,6 +16,11 @@
 // };
 // export default handler;
 
-export async function GET() {
-  return new Response("Hello, Next.js!");
+export async function GET(req, res) {
+  const { movies, error } = await getMovies();
+  return NextResponse.json(movies);
 }
+
+// export async function GET() {
+//   return new Response("Hello, Next.js!");
+// }
