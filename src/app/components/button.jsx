@@ -16,26 +16,26 @@ export default function Button() {
     setMovieData(data);
   };
 
+  //check what is in State
   function whatData() {
     console.log(movieData);
   }
 
   function renderMovieCards() {
-    return movieData.map((movie) => {
+    const cleandata = movieData.filter((x) => x.poster !== null);
+    console.log(cleandata);
+    return cleandata.map((movie) => {
       return (
         <MovieCard key={movie._id} title={movie.title} poster={movie.poster} />
       );
     });
   }
 
-  function renderTest() {
-    return <Test />;
-  }
-
   return (
     <div className="max-w-[1200px]">
-      <h2>Yo Yo</h2>
-      <button onClick={whatData}>what is in state</button>
+      <button className="m-5 border-2 p-2" onClick={whatData}>
+        what is in state
+      </button>
       {movieData ? renderMovieCards() : <h3>meow</h3>}
     </div>
   );
