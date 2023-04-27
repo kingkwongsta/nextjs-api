@@ -11,12 +11,14 @@ export default function Button() {
   const [data, setData] = useState();
 
   const fetchMovie = async () => {
-    const response = await fetch("/api/hello");
+    const response = await fetch("/api/movies");
+    const convert = await response.json();
+    console.log(convert);
     setData(response);
   };
 
   function whatData() {
-    console.log(data.body);
+    console.log(data);
   }
 
   return (
