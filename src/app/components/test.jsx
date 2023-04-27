@@ -7,7 +7,7 @@ import { useState } from "react";
 //     return movies;
 //   }
 
-export default function Button() {
+export default function Test() {
   const [data, setData] = useState();
 
   const fetchMovie = async () => {
@@ -22,8 +22,8 @@ export default function Button() {
   }
 
   return (
-    <div className="max-w-[1200px]">
-      <h2>Yo Yo Yo</h2>
+    <div className="max-w-[1200px] m-10">
+      <h2>Nice Nice Nice</h2>
       <button onClick={fetchMovie}>{data ? "got data" : "hello"}</button>
       <br />
       <button onClick={whatData}>what is in state</button>

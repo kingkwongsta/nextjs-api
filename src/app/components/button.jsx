@@ -1,43 +1,42 @@
-// "use client";
-import { GET } from "./../api/movies/route";
-// import { getMovies } from "./../../../lib/mongo/movies";
+"use client";
+import { useState, useEffect } from "react";
 import MovieCard from "./moviecard";
+import Test from "./test";
 
-// export async function getStaticProps() {
-//   const message = await GET("message");
-//   console.log(message);
-//   return message;
-// }
+export default function Button() {
+  const [movieData, setMovieData] = useState();
 
-// async function fetchMovies() {
-//   const { movies } = await getMovies();
-//   return movies;
-// }
+  useEffect(() => {
+    fetchMovie();
+  }, []);
 
-async function fetchMovies() {
-  const { movies } = await GET();
-  return movies;
-}
+  const fetchMovie = async () => {
+    const response = await fetch("/api/movies");
+    const data = await response.json();
+    setMovieData(data);
+  };
 
-export default async function Button({ message }) {
-  //   const getData = async () => {
-  //     const res = await getMovies();
-  //     setMovieData(res);
-  //     console.log(res);
-  //   };
-  const movies = await fetchMovies();
+  function whatData() {
+    console.log(movieData);
+  }
 
   function renderMovieCards() {
-    return movies.map((movie) => {
-      <MovieCard key={movie._id} title={movie.title} poster={movie.poster} />;
+    return movieData.map((movie) => {
+      return (
+        <MovieCard key={movie._id} title={movie.title} poster={movie.poster} />
+      );
     });
+  }
+
+  function renderTest() {
+    return <Test />;
   }
 
   return (
     <div className="max-w-[1200px]">
       <h2>Yo Yo</h2>
-      <div>{movies}</div>
-      {/* {movieData ? renderMovieCards() : <></>} */}
+      <button onClick={whatData}>what is in state</button>
+      {movieData ? renderMovieCards() : <h3>meow</h3>}
     </div>
   );
 }

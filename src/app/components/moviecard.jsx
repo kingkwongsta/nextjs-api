@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function MovieCard({ key, title, poster }) {
+export default function MovieCard({ title, poster }) {
   return (
     <div className="flex flex-row">
       <div>
