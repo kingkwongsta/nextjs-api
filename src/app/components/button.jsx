@@ -36,7 +36,7 @@ export default function Button() {
       <button className="m-5 border-2 p-2" onClick={whatData}>
         what is in state
       </button>
-      <div className="flex flex-wrap gap-5 justify-between">
+      <div className="grid grid-flow-row-dense grid-cols-5 gap-5">
         {movieData ? renderMovieCards() : <h3>meow</h3>}
       </div>
     </div>
