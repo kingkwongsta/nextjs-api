@@ -13,14 +13,17 @@ export default function MovieCard({ title, poster }) {
   return (
     <>
       {imageExist ? (
-        <div>
-          <Image
-            onError={handleImageError}
-            src={poster}
-            width={175}
-            height={250}
-            alt="poster"
-          />
+        <div className="w-[162.5px] h-[330px]">
+          <div className="max-w-[162.5px] max-h-[261px] mb-[5px] h-[261px]">
+            <Image
+              className="object-cover"
+              onError={handleImageError}
+              src={poster}
+              width={162.5}
+              height={261}
+              alt="poster"
+            />
+          </div>
           <h3>{title}</h3>
         </div>
       ) : (
