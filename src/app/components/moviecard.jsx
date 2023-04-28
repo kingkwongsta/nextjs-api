@@ -6,7 +6,12 @@ export default function MovieCard({ title, poster }) {
   const [imageExist, setimageExist] = useState(true);
 
   function handleImageError() {
-    console.log(title, " is false");
+    console.log(
+      "the ",
+      title,
+      "'s movie poster image returns a 404 and will not be included"
+    );
+    console.log("This is the image file: ", poster);
     setimageExist(false);
   }
 
