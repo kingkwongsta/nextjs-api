@@ -13,7 +13,7 @@ export default function Button() {
   const fetchMovie = async () => {
     const response = await fetch("/api/movies");
     const data = await response.json();
-    setMovieData(data);
+    setMovieData(response);
   };
 
   //check what is in State
