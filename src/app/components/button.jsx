@@ -24,9 +24,9 @@ export default function Button() {
   function renderMovieCards() {
     const cleandata = movieData.filter((x) => x.poster !== undefined);
     console.log(cleandata);
-    return cleandata.map((movie) => {
+    return cleandata.map((movie, index) => {
       return (
-        <MovieCard key={movie._id} title={movie.title} poster={movie.poster} />
+        <MovieCard key={index} title={movie.title} poster={movie.poster} />
       );
     });
   }

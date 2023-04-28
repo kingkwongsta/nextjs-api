@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function MovieCard({ title, poster }) {
+export default function MovieCard({ index, title, poster }) {
   const [imageExist, setimageExist] = useState(true);
 
   function handleImageError() {
@@ -17,7 +17,9 @@ export default function MovieCard({ title, poster }) {
 
   return (
     <>
-      {imageExist ? (
+      {index > 15 ? (
+        <></>
+      ) : imageExist ? (
         <div className="w-[162.5px] h-[330px]">
           <div className="max-w-[162.5px] max-h-[261px] mb-[5px] h-[261px]">
             <Image
