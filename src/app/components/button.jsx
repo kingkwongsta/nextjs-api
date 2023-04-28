@@ -24,7 +24,6 @@ export default function Button() {
   function renderMovieCards() {
     const cleandata = movieData.filter((x) => x.poster !== undefined);
     console.log(cleandata);
-    console.log(cleandata[5]);
     return cleandata.map((movie) => {
       return (
         <MovieCard key={movie._id} title={movie.title} poster={movie.poster} />
@@ -37,7 +36,7 @@ export default function Button() {
       <button className="m-5 border-2 p-2" onClick={whatData}>
         what is in state
       </button>
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-wrap gap-5">
         {movieData ? renderMovieCards() : <h3>meow</h3>}
       </div>
     </div>
