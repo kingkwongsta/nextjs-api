@@ -5,7 +5,3 @@ export async function GET(req, res) {
   const { restaurants, error } = await getRestaurants();
   return NextResponse.json(restaurants);
 }
-
-// export async function GET() {
-//   return new Response("Hello, Next.js!");
-// }
