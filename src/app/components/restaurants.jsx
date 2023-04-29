@@ -14,7 +14,7 @@ export default function Restaurants() {
   };
   return (
     <div>
-      <h2>Restaurant Data</h2>
+      <h2>Restaurants Data</h2>
     </div>
   );
 }
