@@ -12,6 +12,7 @@ export default function Button() {
 
   const fetchMovie = async () => {
     const response = await fetch("/api/movies");
+    console.log(response);
     const data = await response.json();
     setMovieData(data);
   };
