@@ -35,7 +35,7 @@ export default function Movie() {
   return (
     <div className="max-w-[1200px]">
       <button className="m-5 border-2 p-2" onClick={whatData}>
-        what is in state
+        what is in movie component state
       </button>
       <div className="grid grid-flow-row-dense grid-cols-5 gap-5">
         {movieData ? renderMovieCards() : <h3>meow</h3>}
