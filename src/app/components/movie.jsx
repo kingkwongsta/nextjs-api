@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import MovieCard from "./moviecard";
 import Test from "./test";
 
-export default function Button() {
+export default function Movie() {
   const [movieData, setMovieData] = useState();
 
   useEffect(() => {

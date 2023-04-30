@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/restauraunts/route.js"
+    "src/app/api/restaurants/route.js"
   ],
   "exclude": ["node_modules"]
 }
