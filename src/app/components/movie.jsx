@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import MovieCard from "./moviecard";
-import Test from "./test";
 
 export default function Movie() {
-  const [movieData, setMovieData] = useState();
+  const [movieData, setMovieData] = useState([]);
 
   useEffect(() => {
     fetchMovie();
@@ -23,6 +22,7 @@ export default function Movie() {
   }
 
   function renderMovieCards() {
+    //remove movies with no poster available
     const cleandata = movieData.filter((x) => x.poster !== undefined);
     console.log(cleandata);
     return cleandata.map((movie, index) => {
@@ -34,6 +34,7 @@ export default function Movie() {
 
   return (
     <div className="max-w-[1200px]">
+      {/* debug to check data */}
       <button className="m-5 border-2 p-2" onClick={whatData}>
         what is in movie component state
       </button>
