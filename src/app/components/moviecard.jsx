@@ -5,6 +5,7 @@ import Image from "next/image";
 export default function MovieCard({ index, title, poster }) {
   const [imageExist, setimageExist] = useState(true);
 
+  // on image load if error then hide movie
   function handleImageError() {
     console.log(
       "the ",
