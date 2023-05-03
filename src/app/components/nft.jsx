@@ -28,6 +28,7 @@ export default function NFT() {
       <button onClick={showState} className="border-2 p-3">
         What is in State
       </button>
+      <h2>testing out the new codespace!</h2>
     </div>
   );
 }
