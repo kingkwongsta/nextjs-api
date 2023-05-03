@@ -1,14 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
+import importedData from "./../api/nft/nftData";
 
 // 4OaFk7STzmZ2D2ElyiKupVSbXyPqRwaJ
 
 export default function NFT() {
-  const [nftData, setNftData] = useState();
+  const [nftData, setNftData] = useState(importedData.rows[1]);
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   function showState() {
     console.log(nftData);
