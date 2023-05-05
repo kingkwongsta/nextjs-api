@@ -2,6 +2,7 @@
 
 "use client";
 import { useState, useEffect } from "react";
+import NFTItem from "./nftitem";
 
 export default function NFT() {
   const [nftData, setNftData] = useState();
@@ -19,6 +20,12 @@ export default function NFT() {
     setNftData(data[0].rows);
   };
 
+  function nftElements() {
+    return nftData.map((nft, index) => {
+      return <NFTItem key={index} link={nft.collection} />;
+    });
+  }
+
   return (
     <div className="m-10">
       <button onClick={showState} className="border-2 p-3">
@@ -29,7 +36,7 @@ export default function NFT() {
       ) : (
         <div className="p3">No Data Yet</div>
       )}
-      <h2>testing out the new codespace!</h2>
+      {nftData ? nftElements() : <div className="p3">No Data Yet</div>}
     </div>
   );
 }
