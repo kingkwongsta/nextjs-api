@@ -1,3 +1,5 @@
+//MongoImport Commandline = mongoimport --uri mongodb+srv://admin:admin@mongocluster.5ippwgz.mongodb.net/nft --collection test --type csv --headerline --file test.json
+
 "use client";
 import { useState, useEffect } from "react";
 import importedData from "./../api/nft/nftData";
@@ -7,7 +9,7 @@ import importedData from "./../api/nft/nftData";
 export default function NFT() {
   const [nftData, setNftData] = useState(importedData.rows[1]);
   const APIEndpoint =
-    "https://api.dune.com/api/v1/query/2435066/results?api_key=4OaFk7STzmZ2D2ElyiKupVSbXyPqRwaJ";
+    "https://api.dune.com/api/v1/query/2435066/results?api_key=g8YVZgY4LmKtF2gW0Afip63lEZK7V9as";
 
   useEffect(() => {
     getData();
