@@ -11,9 +11,9 @@ export default function NFT() {
   const APIEndpoint =
     "https://api.dune.com/api/v1/query/2435066/results?api_key=g8YVZgY4LmKtF2gW0Afip63lEZK7V9as";
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   function showState() {
     console.log(nftData);
@@ -30,7 +30,11 @@ export default function NFT() {
       <button onClick={showState} className="border-2 p-3">
         What is in State
       </button>
-      {nftData ? <div className="p-3">Got the Data for the State</div> : <></>}
+      {nftData ? (
+        <div className="p-3">Got the Data for the State</div>
+      ) : (
+        <div className="p3">No Data Yet</div>
+      )}
       <h2>testing out the new codespace!</h2>
     </div>
   );
