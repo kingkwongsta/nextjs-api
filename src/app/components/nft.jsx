@@ -12,8 +12,7 @@ export default function NFT() {
   const APIEndpoint = `https://api.dune.com/api/v1/query/2443176/results?api_key=${apiKey}`;
   // const apiKey = process.env.DUNEAPI;
   useEffect(() => {
-    // getData();
-    // getExample();
+    getData();
   }, []);
   console.log(APIEndpoint);
 
@@ -21,15 +20,12 @@ export default function NFT() {
     console.log(nftData);
   }
 
-  // async function getExample() {
-  //   const data = await exampleData();
-  //   setNftData(data);
-  // }
-
   const getData = async () => {
-    const res = await fetch(APIEndpoint, apiKey);
+    const res = await fetch(
+      "https://api.dune.com/api/v1/query/2443176/results?api_key=g8YVZgY4LmKtF2gW0Afip63lEZK7V9as"
+    );
     const data = await res.json();
-    setNftData(data);
+    setNftData(data.result);
   };
 
   return (
