@@ -2,21 +2,22 @@
 
 "use client";
 import { useState, useEffect } from "react";
-
-// 4OaFk7STzmZ2D2ElyiKupVSbXyPqRwaJ
+// import cool from "../../../lib/mongo/nft";
 
 export default function NFT() {
   const [nftData, setNftData] = useState();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // getData();
+  }, []);
 
   function showState() {
     console.log(nftData);
   }
 
   const getData = async () => {
-    const res = await fetch();
-    const data = await res.json();
-    setNftData(data.result);
+    // const res = await fetch("/api/nft");
+    // const data = await res.json();
+    setNftData(data);
   };
 
   return (
