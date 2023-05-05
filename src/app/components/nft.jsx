@@ -7,22 +7,29 @@ import importedData from "./../api/nft/nftData";
 // 4OaFk7STzmZ2D2ElyiKupVSbXyPqRwaJ
 
 export default function NFT() {
-  const [nftData, setNftData] = useState(importedData.rows[1]);
-  const APIEndpoint =
-    "https://api.dune.com/api/v1/query/2435066/results?api_key=g8YVZgY4LmKtF2gW0Afip63lEZK7V9as";
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  const [nftData, setNftData] = useState();
+  const apiKey = "g8YVZgY4LmKtF2gW0Afip63lEZK7V9as";
+  const APIEndpoint = `https://api.dune.com/api/v1/query/2443176/results?api_key=${apiKey}`;
+  // const apiKey = process.env.DUNEAPI;
+  useEffect(() => {
+    // getData();
+    // getExample();
+  }, []);
+  console.log(APIEndpoint);
 
   function showState() {
     console.log(nftData);
   }
 
+  // async function getExample() {
+  //   const data = await exampleData();
+  //   setNftData(data);
+  // }
+
   const getData = async () => {
-    const res = await fetch(APIEndpoint);
+    const res = await fetch(APIEndpoint, apiKey);
     const data = await res.json();
-    setNftData(data.result);
+    setNftData(data);
   };
 
   return (
