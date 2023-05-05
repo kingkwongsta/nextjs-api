@@ -39,14 +39,9 @@ export default function NFT() {
         What is in State
       </button>
       {nftData ? (
-        <div className="p-3">Got the Data for the State</div>
+        <div className="">{nftElements()}</div>
       ) : (
-        <div className="p3">No Data Yet</div>
-      )}
-      {nftData == undefined ? (
-        nftElements()
-      ) : (
-        <div className="p3">No Data Yet</div>
+        <div className="p-3">No Data Yet</div>
       )}
     </div>
   );
