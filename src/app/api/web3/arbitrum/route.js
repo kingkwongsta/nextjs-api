@@ -1,4 +1,4 @@
-import { getData } from "../../../../lib/mongo/nft";
+import { getData } from "../../../../../lib/mongo/nft";
 import { NextResponse } from "next/server";
 
 export async function GET() {
