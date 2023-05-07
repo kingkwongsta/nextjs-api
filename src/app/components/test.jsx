@@ -17,12 +17,23 @@ export default function Test() {
   };
 
   const createRow = () => {
-    return queryData.map((x, index) => {
-      return <tr key={index}>{x.metadata.column_names[index]}</tr>;
+    return queryData.metadata.column_names.map((x, index) => {
+      console.log(x);
+      return <td key={index}>{x}</td>;
     });
   };
 
   return (
-    <div>{queryData ? <table>{createRow}</table> : <div>No Data</div>}</div>
+    <div>
+      {queryData ? (
+        <table>
+          <tbody>
+            <tr>{createRow()}</tr>
+          </tbody>
+        </table>
+      ) : (
+        <div>No Data</div>
+      )}
+    </div>
   );
 }
