@@ -10,8 +10,10 @@ export default function Test() {
   const fetchData = async () => {
     const res = await fetch("/api/web3/arbitrum");
     const data = await res.json();
-    setQueryData(data.result);
-    console.log(data.result);
+    // setQueryData(data.rows);
+    // console.log(data.rows);
+    setQueryData(data[0].rows);
+    console.log(data[0].rows);
   };
 
   return (
