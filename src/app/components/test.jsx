@@ -12,13 +12,17 @@ export default function Test() {
     const data = await res.json();
     // setQueryData(data.rows);
     // console.log(data.rows);
-    setQueryData(data[0].rows);
-    console.log(data[0].rows);
+    setQueryData(data[0]);
+    console.log(data[0]);
+  };
+
+  const createRow = () => {
+    return queryData.map((x, index) => {
+      return <tr key={index}>{x.metadata.column_names[index]}</tr>;
+    });
   };
 
   return (
-    <div>
-      Hello<div>World</div>
-    </div>
+    <div>{queryData ? <table>{createRow}</table> : <div>No Data</div>}</div>
   );
 }
