@@ -16,10 +16,22 @@ export default function Test() {
     console.log(data[0]);
   };
 
-  const createRow = () => {
-    return queryData.metadata.column_names.map((x, index) => {
+  const createHeader = () => {
+    const data = queryData.metadata.column_names;
+    const filterData = [data[4]];
+    return filterData.map((x, index) => {
       console.log(x);
-      return <td key={index}>{x}</td>;
+      return <th key={index}>{x}</th>;
+    });
+  };
+  const createRows = () => {
+    return queryData.rows.map((x, index) => {
+      console.log(x);
+      return (
+        <tr key={index}>
+          <td>{x.block_number}</td>
+        </tr>
+      );
     });
   };
 
@@ -28,7 +40,8 @@ export default function Test() {
       {queryData ? (
         <table>
           <tbody>
-            <tr>{createRow()}</tr>
+            <tr>{createHeader()}</tr>
+            {createRows()}
           </tbody>
         </table>
       ) : (
