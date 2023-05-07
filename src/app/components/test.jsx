@@ -18,7 +18,7 @@ export default function Test() {
 
   const createHeader = () => {
     const data = queryData.metadata.column_names;
-    const filterData = [data[4]];
+    const filterData = [data[2], data[5]];
     return filterData.map((x, index) => {
       console.log(x);
       return <th key={index}>{x}</th>;
@@ -30,6 +30,7 @@ export default function Test() {
       return (
         <tr key={index}>
           <td>{x.block_number}</td>
+          <td>{x.gas_used}</td>
         </tr>
       );
     });
