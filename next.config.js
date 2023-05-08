@@ -15,6 +15,11 @@ module.exports = {
         hostname: "m.media-amazon.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "i.seadn.io",
+        port: "",
+      },
     ],
   },
   experimental: {
