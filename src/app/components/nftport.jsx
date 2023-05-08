@@ -11,20 +11,10 @@ export default function Nftport() {
   function logState() {
     console.log(apiData);
   }
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: "671f012a-921d-43d6-9b84-2a2421525c1f",
-    },
-  };
 
   const fetchData = async () => {
     try {
-      const res = await fetch(
-        "https://api.nftport.xyz/v0/contracts/top?page_size=50&page_number=1&period=24h&order_by=volume&chain=ethereum",
-        options
-      );
+      const res = await fetch("api/web3/nft/top-eth");
       const data = await res.json();
       console.log("executed try");
       setApiData(data);
