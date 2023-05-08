@@ -21,13 +21,12 @@ export default function Nftport() {
   const getData = async () => {
     try {
       const res = await fetch(
-        "https://api.nftport.xyz/v0/contracts/top?page_size=100&page_number=1&period=24h&order_by=volume&chain=ethereum&chain=polygon",
+        "https://api.nftport.xyz/v0/contracts/top?page_size=50&page_number=1&period=24h&order_by=volume&chain=ethereum",
         options
       );
       const data = await res.json();
       console.log("executed try");
-      setApiData(data);
-      return data;
+      setApiData(data.contracts);
     } catch (error) {
       console.log(error);
     }
