@@ -26,7 +26,8 @@ export default function Nftport() {
       );
       const data = await res.json();
       console.log("executed try");
-      setApiData(data.contracts);
+      //   setApiData(data.contracts);
+      setApiData(data);
     } catch (error) {
       console.log(error);
     }

@@ -1,6 +1,3 @@
-//MongoImport Commandline = mongoimport --uri mongodb+srv://admin:admin@mongocluster.5ippwgz.mongodb.net/nft --collection test --type csv --headerline --file test.json
-//mongoimport --uri mongodb+srv://admin:admin@mongocluster.5ippwgz.mongodb.net/web3 --collection arbitrum --type json --file dunedata.json
-
 "use client";
 import { useState, useEffect } from "react";
 import Nftitem from "./nftitem";
