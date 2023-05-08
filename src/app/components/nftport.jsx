@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
+
 export default function Nftport() {
   const [apiData, setApiData] = useState();
 
   useEffect(() => {
-    getData();
+    fetchData();
   }, []);
 
   function logState() {
@@ -18,7 +19,7 @@ export default function Nftport() {
     },
   };
 
-  const getData = async () => {
+  const fetchData = async () => {
     try {
       const res = await fetch(
         "https://api.nftport.xyz/v0/contracts/top?page_size=50&page_number=1&period=24h&order_by=volume&chain=ethereum",
@@ -26,7 +27,6 @@ export default function Nftport() {
       );
       const data = await res.json();
       console.log("executed try");
-      //   setApiData(data.contracts);
       setApiData(data);
     } catch (error) {
       console.log(error);
