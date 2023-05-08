@@ -13,11 +13,14 @@ export default function Popular() {
     const res = await fetch("api/web3/nft/top-eth");
     const data = await res.json();
     console.log("data should be there");
-    setNftData(data[0]);
+    setNftData(data[0].contracts);
   };
 
   const renderPopular = () => {
-    return nftData.contracts.map((x, index) => {
+    const filterData = nftData.filter((x) =>
+      x.metadata.thumbnail_url.includes("seadn.io")
+    );
+    return filterData.map((x, index) => {
       return <PopularCard key={index} nft={x} />;
     });
   };
