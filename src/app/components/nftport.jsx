@@ -3,6 +3,13 @@ import { useState, useEffect } from "react";
 export default function Nftport() {
   const [apiData, setApiData] = useState();
 
+  useEffect(() => {
+    getData();
+  }, []);
+
+  function logState() {
+    console.log(apiData);
+  }
   const options = {
     method: "GET",
     headers: {
@@ -14,12 +21,23 @@ export default function Nftport() {
   const getData = async () => {
     try {
       const res = await fetch(
-        "https://api.nftport.xyz/v0/contracts/top?page_size=10&page_number=1&period=24h&order_by=volume&chain=ethereum&chain=polygon",
+        "https://api.nftport.xyz/v0/contracts/top?page_size=100&page_number=1&period=24h&order_by=volume&chain=ethereum&chain=polygon",
         options
       );
-      const data = res.json();
+      const data = await res.json();
+      console.log("executed try");
+      setApiData(data);
+      return data;
     } catch (error) {
       console.log(error);
     }
   };
+  return (
+    <div>
+      {apiData ? <h2>Got Data</h2> : <h2>No Data</h2>}
+      <button className="border-2 p-3" onClick={logState}>
+        Hello
+      </button>
+    </div>
+  );
 }
