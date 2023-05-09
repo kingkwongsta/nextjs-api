@@ -10,7 +10,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import faker from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
