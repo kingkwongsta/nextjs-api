@@ -6,6 +6,7 @@ import NFT from "./components/nft";
 import Test from "./components/test";
 import Nftport from "./components/nftport";
 import Popular from "./components/popular/popular";
+import Chart from "./components/chart/chart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
+        <Chart />
         <Nftport />
         <Popular />
         {/* <Test /> */}
