@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import faker from "faker";
+import faker from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
@@ -50,12 +50,12 @@ export default function Chart() {
     datasets: [
       {
         label: "Dataset 1",
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+        data: [24, 5, 77, 99, 33, 29, 11],
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
       {
         label: "Dataset 2",
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+        data: [4, 66, 34, 199, 23, 44, 75],
         backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
