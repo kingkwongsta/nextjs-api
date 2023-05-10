@@ -14,6 +14,7 @@ export default function NFTCollection() {
   ];
 
   const allCollectionData = [];
+  const URI = process.env.URI;
 
   const options = {
     method: "GET",
@@ -35,6 +36,8 @@ export default function NFTCollection() {
   };
 
   getData();
+
+  console.log(URI);
 
   // fetch('https://api.nftport.xyz/v0/nfts/0x23581767a106ae21c074b2276d25e5c3e136a68b?chain=ethereum&page_number=1&page_size=50&include=metadata&include=file_information&include=rarity&include=last_sale_price&include=all&refresh_metadata=false', options)
 
