@@ -14,6 +14,7 @@ export default function NFTCollection() {
   ];
 
   const allCollectionData = [];
+  const tester = [];
 
   const options = {
     method: "GET",
@@ -27,9 +28,14 @@ export default function NFTCollection() {
     console.log(allCollectionData);
   }
 
-  const getData = () => {
+  const getData = async () => {
     for (let i = 0; i < addresses.length; i++) {
-      allCollectionData.push(addresses[i]);
+      const res = await fetch(
+        `https://api.nftport.xyz/v0/nfts/${addresses[i]}?chain=ethereum&page_number=1&page_size=50&include=metadata&include=file_information&include=rarity&include=last_sale_price&include=all&refresh_metadata=false`,
+        options
+      );
+      const data = await res.json();
+      allCollectionData.push(data);
     }
     console.log(allCollectionData);
   };
@@ -37,8 +43,6 @@ export default function NFTCollection() {
   getData();
 
   //process.env.NFTPORT_API
-
-  // fetch('https://api.nftport.xyz/v0/nfts/0x23581767a106ae21c074b2276d25e5c3e136a68b?chain=ethereum&page_number=1&page_size=50&include=metadata&include=file_information&include=rarity&include=last_sale_price&include=all&refresh_metadata=false', options)
 
   return (
     <div>
