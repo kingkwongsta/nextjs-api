@@ -1,9 +1,10 @@
 //TODO
 //Convert to server side render
 "use client";
-import { useEffect } from "react";
 
 export default function NFTCollection() {
+  let allCollectionData = [];
+
   function handleClick() {
     console.log(allCollectionData);
   }
