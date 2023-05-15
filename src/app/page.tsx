@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-        <h2>HELLO</h2>
+        <h2>HELLO WORLD</h2>
         <NFTCollection />
         {/* <Chart />
         <Nftport />
