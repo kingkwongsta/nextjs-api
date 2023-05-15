@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import Movie from "./components/movie";
 import Restaurants from "./components/restaurants";
@@ -15,6 +14,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
+        <h2>HELLO WORLD</h2>
         <NFTCollection />
         {/* <Chart />
         <Nftport />
